@@ -4,8 +4,6 @@ const model = {
   namespace: 'index',
   state: {
     pathname: '/',
-    count: 0,
-    init: false,
   },
   reducers: {
     setState(state, { payload }) {

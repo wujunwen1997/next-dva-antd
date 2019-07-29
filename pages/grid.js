@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
 import WithDva from '../utils/store';
 import Layout from '../components/layout'
 import s from '../css/grid.scss'

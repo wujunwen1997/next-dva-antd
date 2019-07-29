@@ -1,42 +1,50 @@
-# Ant Design example
+1.使用antd
 
-## How to use
+初始化项目，使用官方的例子：
 
-### Using `create-next-app`
+https://github.com/zeit/next.js/tree/canary/examples/with-ant-design
 
-Execute [`create-next-app`](https://github.com/segmentio/create-next-app) with [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) or [npx](https://github.com/zkat/npx#readme) to bootstrap the example:
-
-```bash
 npx create-next-app --example with-ant-design with-ant-design-app
 # or
 yarn create next-app --example with-ant-design with-ant-design-app
-```
 
-### Download manually
 
-Download the example:
+2.使用sass
 
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-ant-design
-cd with-ant-design
-```
+先导入依赖
 
-Install it and run:
+const withSass = require('@zeit/next-sass')
+再写入webpack设置---------->next.config.js
 
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
+注意：对sass进行模块化加载
 
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
 
-```bash
-now
-```
 
-## The idea behind the example
+3.使用dva
 
-This example shows how to use Next.js along with [Ant Design of React](http://ant.design). This is intended to show the integration of this UI toolkit with the Framework.
+参考dva官方文档中对于next的例子
+
+https://github.com/dvajs/dva/tree/master/examples/with-nextjs
+
+4.next中需要注意的点
+
+获取数据
+
+在dva+react的使用中我们经常会有以下的情况：
+
+在componentDidMount中调用dva中的Effect，触发put更新state的数据
+
+然后在组件中使用model中的数据用来渲染视图
+
+问题： 在next的机制中是错误的
+
+需要使用next推荐使用的方法
+
+ static async getInitialProps
+获取到异步数据之后返回，
+
+在组件中的this.props中获取返回数据
+
+对<Head>进行合理的封装
+
+...

@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
-import WithDva from '../utils/store';
 import Layout from '../components/layout'
 import {getTq} from '../services/index'
 
 
-class Page extends React.Component {
+class Page extends Component {
   static async getInitialProps({ req }) {
     const {data} = await getTq();
-    console.log(1234567890, data);
     return { data };
   }
   state = {
@@ -17,7 +14,6 @@ class Page extends React.Component {
     }
   };
   render() {
-    console.log(123312312, this.props);
     const {data} = this.props;
     return (
       <Layout {...this.state}>

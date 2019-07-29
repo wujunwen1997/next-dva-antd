@@ -19,14 +19,12 @@ class Sider extends Component {
     const goGrid = () => {
       Router.push('/grid')
     }
-    // const {pathname} = this.props;
     console.log(123, this.props, Router);
     const {index} = this.props;
     return (
       <div>
         <Menu
           style={{background: 'none'}}
-          selectedKeys={['/']}
           mode={this.state.mode}
           theme={this.state.theme}
         >
