@@ -1,0 +1,12 @@
+.con{
+  display: grid;grid-template-rows: repeat(4, 150px);width: 600px;grid-template-columns: repeat(3, 200px);
+  height: 600px;grid-auto-flow: row dense;
+  .item1{background: #40a9ff;}
+  .item2{background: #70ff8e;grid-row-start: 2;grid-row-end: 4}
+  .item3{background: #ff594f;}
+  .item4{background: #6881ff;grid-column-start: 2; grid-column-end: 4}
+  .item5{background: #ff37f7;}
+  .item6{background: #fbff30;}
+  .item7{background: #e1ffe6;}
+  .item8{background: #1effbc;}
+}
